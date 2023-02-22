@@ -46,6 +46,7 @@ class Main:
             while True:
                 self.start_requests()
         else:
+            self.start_requests()
             schedule.every().day.at("06:00").do(self.start_requests)
             while True:
                 schedule.run_pending()
