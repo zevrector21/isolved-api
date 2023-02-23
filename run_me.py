@@ -105,7 +105,7 @@ class Main:
                                     continue
 
                             cur_time = time.time()
-                            if cur_time - self.prev_time > 260:
+                            if cur_time - self.prev_time > 240:
                                 self.token = self.get_token()
                                 self.prev_time = cur_time
 
@@ -288,6 +288,7 @@ class Main:
                     employee_details[key] = self.client_organizations[key][value]
             else:
                 employee_check_list = self.get_employee_check_list(employee)
+                employee_check_details = {}
                 for employee_check in employee_check_list:
                     employee_check_details = self.get_employee_check_details(employee_check, [])
                     if employee_check_details:
